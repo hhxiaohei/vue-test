@@ -12,6 +12,7 @@
   "dependencies": {
     "bootstrap-sass": "^3.3.7",
     "font-awesome": "^4.7.0",
+    "npm": "^6.0.1",
     "sass-loader": "^7.0.1",
     "vue": "^2.5.2"
   },
