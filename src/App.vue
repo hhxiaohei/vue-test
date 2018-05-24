@@ -1,16 +1,20 @@
 <template>
   <div id="wrap">
     <the-header></the-header>
+    <TheFooter/>
   </div>
 </template>
 
 <script>
+//页头
 import TheHeader from '@/components/layouts/TheHeader'
-
+//页脚
+import TheFooter from '@/components/layouts/TheFooter'
 export default {
   name: 'App',
   components: {
-    TheHeader
+    TheHeader,
+    TheFooter
   }
 }
 </script>
