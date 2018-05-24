@@ -6,7 +6,7 @@
           <p class="padding-top-xsm">{{ description }}</p>
 
           <div class="text-md">
-            <a v-for="item in contacts" :title="item.title" :href="item.link" :style="contactStyle" target="_blank">
+            <a v-for="item in contacts" v-title="item.title" :href="item.link" :style="contactStyle" target="_blank">
               <i :class="`fa fa-${item.icon}`"></i>
             </a>
           </div>
@@ -24,7 +24,7 @@
               <ul class="list-unstyled">
                 <li v-for="item in sponsor.list">
                   <a :href="item.link" target="_blank">
-                    <img :title="item.title" :src="item.logo" :alt="item.title" class="footer-sponsor-link" width="98">
+                    <img v-title="item.title" :src="item.logo" :alt="item.title" class="footer-sponsor-link" width="98">
                   </a>
                 </li>
               </ul>
@@ -43,7 +43,7 @@
 
               <ul class="list-unstyled">
                 <li v-for="item in other.list">
-                  <a :href="item.link" :title="item.title" target="_blank">
+                  <a :href="item.link" v-title="item.title" target="_blank">
                     <i :class="`fa fa-${item.icon}`"></i> {{ item.title }}
                   </a>
                 </li>
@@ -57,8 +57,14 @@
 </template>
 
 <script>
+
+import title from '@/directives/title'
+
 export default {
   name: 'TheFooter',
+  directives: {
+    title
+  },
   data() {
     return {
       description: 'VuejsCaff 是一个 Vue.js 的知识社区',
